@@ -21,9 +21,10 @@ El sistema clasifica automáticamente los incidentes, asigna prioridad y genera 
 agente_clinica/
 │
 ├── src/
+│   ├── __init__.py        # Marca la carpeta como paquete
 │   ├── pacientes.py       # Guardar pacientes
 │   ├── consultas.py       # Guardar consultas
-│   ├── incidentes.py      # Guardar incidentes
+│   ├── registro.py      # Guardar incidentes
 │   ├── clasificacion.py   # Clasificar incidentes
 │   ├── prioridad.py       # Asignar prioridad
 │   ├── sugerencias.py     # Generar sugerencias
@@ -39,7 +40,8 @@ agente_clinica/
 │   └── incidentes.json
 │
 └── tests/
-    └── test_flujo.py      # Test de integración con pytest
+    ├── __init__.py        # Marca la carpeta como paquete de tests
+    └── _test.py      # Test de integración con pytest
 
 ```
 ---
@@ -93,6 +95,3 @@ Esto valida que:
 - Los archivos JSON se creen y contengan datos.
 
 ---
-
-
-👉 Este README.md ya está listo para subir a tu repositorio. ¿Querés que te prepare también un **requirements.txt** con las librerías mínimas necesarias para que todo funcione sin problemas?

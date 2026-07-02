@@ -1,139 +1,95 @@
+# 🏥 Agente de Clínica
 
-# 🏥 Agente Clínica
+Aplicación en **Python** con interfaz gráfica en **Tkinter** que permite registrar pacientes, consultas e incidentes médicos.  
+El sistema clasifica automáticamente los incidentes, asigna prioridad y genera sugerencias para el paciente.
 
-Sistema clínico inteligente en Python que permite registrar pacientes, turnos e incidentes médicos, y además clasificar automáticamente las consultas usando un modelo entrenado.
+---
+
+## 📌 Características principales
+- Registro de **pacientes** con nombre, edad y teléfono.
+- Registro de **consultas** con especialidad y fecha/hora automáticas.
+- Registro de **incidentes** con texto, categoría, prioridad y sugerencias.
+- Clasificación automática de incidentes según el texto ingresado.
+- Generación de respuestas claras y visuales con emojis.
+- Interfaz gráfica simple y amigable en Tkinter.
+- Persistencia de datos en archivos JSON (`pacientes.json`, `consultas.json`, `incidentes.json`).
 
 ---
 
 ## 📂 Estructura del proyecto
-
 ```
 agente_clinica/
-├── src/                  # Código fuente principal
-│   ├── main.py           # Punto de entrada del sistema
-│   ├── pacientes.py      # Registro y almacenamiento de pacientes
-│   ├── turnos.py         # Registro y almacenamiento de turnos
-│   ├── incidentes.py     # Registro y almacenamiento de incidentes
-│   ├── clasificacion.py  # Clasificación automática de incidentes
-│   ├── prioridad.py      # Asignación de prioridad
-│   ├── sugerencias.py    # Generación de sugerencias de acción
-│   └── respuesta.py      # Formateo de la salida final
 │
-├── data/                 # Datos persistentes
-│   ├── pacientes.json    # Pacientes registrados
-│   ├── turnos.json       # Turnos agendados
-│   ├── incidentes.json   # Incidentes clínicos
-│   └── dataset.csv       # Dataset de frases para entrenar el modelo
+├── src/
+│   ├── pacientes.py       # Guardar pacientes
+│   ├── consultas.py       # Guardar consultas
+│   ├── incidentes.py      # Guardar incidentes
+│   ├── clasificacion.py   # Clasificar incidentes
+│   ├── prioridad.py       # Asignar prioridad
+│   ├── sugerencias.py     # Generar sugerencias
+│   ├── respuesta.py       # Generar respuesta final
+│   └── main.py            # Interfaz gráfica Tkinter
 │
-├── modelos/              # Modelos entrenados
-│   └── clasificador.pkl  # Modelo de clasificación guardado
+├── data/
+│   ├── pacientes.json
+│   ├── consultas.json
+│   └── incidentes.json
 │
-├── tests/                # Pruebas automáticas
-│   └── test_integracion.py # Test de integración con pytest
-│
-└── README.md             # Documentación del proyecto
+└── tests/
+    └── test_flujo.py      # Test de integración con pytest
 ```
-
----
-
-## 🚀 Funcionalidades
-
-1. **Registro de pacientes**  
-   Guarda datos básicos (nombre, edad, teléfono) en `data/pacientes.json`.
-
-2. **Gestión de turnos**  
-   Agenda turnos vinculados a pacientes en `data/turnos.json`.
-
-3. **Registro de incidentes**  
-   Guarda consultas médicas en `data/incidentes.json` con categoría, prioridad y sugerencias.
-
-4. **Clasificación automática**  
-   Usa el dataset (`data/dataset.csv`) y el modelo entrenado (`modelos/clasificador.pkl`) para categorizar incidentes.
-
-5. **Asignación de prioridad**  
-   Determina si el incidente es **Alta, Media o Baja** según la categoría.
-
-6. **Generación de sugerencias**  
-   Recomienda acciones según el tipo de incidente (ej. derivar a guardia, notificar médico).
-
-7. **Respuesta formateada**  
-   Muestra al usuario un resumen claro con toda la información.
 
 ---
 
 ## ⚙️ Instalación
-
 1. Clonar el repositorio:
    ```bash
-   git clone https://github.com/tuusuario/agente_clinica.git
+   git clone https://github.com/usuario/agente_clinica.git
    cd agente_clinica
    ```
-
-2. Instalar dependencias (ejemplo con scikit-learn y pandas):
+2. Crear entorno virtual (opcional pero recomendado):
+   ```bash
+   python -m venv venv
+   source venv/bin/activate   # Linux/Mac
+   venv\Scripts\activate      # Windows
+   ```
+3. Instalar dependencias:
    ```bash
    pip install -r requirements.txt
    ```
 
-*(Podés crear un archivo `requirements.txt` con: `pandas`, `scikit-learn`, `pytest`)*
+*(Si no tenés `requirements.txt`, basta con Python 3 y Tkinter que ya viene incluido en la mayoría de instalaciones).*
 
 ---
 
-## ▶️ Ejecución
-
-Ejecutar el sistema desde la consola:
-
+## 🚀 Uso
+Ejecutar la aplicación:
 ```bash
 python src/main.py
 ```
 
-Ejemplo de interacción:
-
-```
-Ingrese nombre del paciente: benjamin
-Ingrese edad del paciente: 18
-Ingrese teléfono del paciente: 1136285252
-Ingrese fecha del turno (YYYY-MM-DD): 2026-07-01
-Ingrese hora del turno (HH:MM): 10:00
-Ingrese especialidad: Clínica Médica
-Ingrese consulta/incidente: me duele el pecho
-```
-
-Salida:
-
-```
-✅ Paciente guardado
-✅ Turno guardado
-✅ Incidente guardado
-
-📌 Consulta recibida: me duele el pecho
-🏷️ Categoría: crítica
-⚠️ Prioridad: Alta
-✅ Sugerencias:
-    - Derivar a guardia inmediatamente
-    - Notificar al médico de turno
-```
+La ventana permite:
+- Ingresar datos del paciente.
+- Seleccionar especialidad.
+- Escribir el incidente/consulta.
+- Registrar todo en el sistema y recibir una respuesta automática.
 
 ---
 
 ## 🧪 Tests
-
-Ejecutar pruebas automáticas con:
+El proyecto incluye pruebas con **pytest** para verificar el flujo completo:
 
 ```bash
-pytest
+pytest tests/
 ```
 
-Resultado esperado:
-
-```
-collected 1 item
-tests/test_integracion.py .
-[100%]
-```
+Esto valida que:
+- Se guarden pacientes correctamente.
+- Se registren consultas con fecha/hora.
+- Se guarden incidentes con categoría, prioridad y sugerencias.
+- Los archivos JSON se creen y contengan datos.
 
 ---
 
 
-👉 Con este README tu repositorio queda **profesional, claro y listo para mostrar**.  
-
-¿Querés que te arme también el archivo `requirements.txt` para que cualquiera pueda instalar las dependencias y correr tu proyecto sin problemas?
+👉 Este README.md ya está listo para subir a tu repositorio. ¿Querés que te prepare también un **requirements.txt** con las librerías mínimas necesarias para que todo funcione sin problemas?

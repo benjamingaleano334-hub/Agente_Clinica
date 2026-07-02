@@ -30,6 +30,9 @@ agente_clinica/
 │   ├── respuesta.py       # Generar respuesta final
 │   └── main.py            # Interfaz gráfica Tkinter
 │
+├── modelos/
+│   └── clasificador.pkl   # Modelo entrenado para clasificación
+│
 ├── data/
 │   ├── pacientes.json
 │   ├── consultas.json
@@ -37,8 +40,8 @@ agente_clinica/
 │
 └── tests/
     └── test_flujo.py      # Test de integración con pytest
-```
 
+```
 ---
 
 ## ⚙️ Instalación

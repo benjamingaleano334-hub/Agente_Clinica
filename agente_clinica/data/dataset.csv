@@ -1,0 +1,57 @@
+texto,categoria
+"me duele el pecho",critica
+"falta de aire",critica
+"no puedo respirar bien",critica
+"tengo dolor fuerte en el pecho",critica
+"me estoy desmayando",critica
+"tengo sangrado abundante",critica
+"convulsiones repentinas",critica
+"me duele la cabeza desde ayer",general
+"tengo fiebre de 38 grados",general
+"me duele la garganta",general
+"tengo tos persistente",general
+"me duele el estómago",general
+"tengo dolor en la espalda",general
+"quiero pedir turno para pediatría",administrativa
+"necesito un turno con cardiología",administrativa
+"qué horarios tienen disponibles",administrativa
+"mi obra social cubre estudios",administrativa
+"quiero cambiar mi turno",administrativa
+"cómo saco turno online",administrativa
+"me falta el aire y quiero turno",critica
+"tengo dolor en el pecho y necesito turno",critica
+"me duele la cabeza y quiero consultar",general
+"necesito saber si atienden por mi obra social",administrativa
+"tengo fiebre y quiero turno",general
+"me duele la pierna",general
+"tengo mareos frecuentes",general
+"me siento muy cansado",general
+"tengo dolor abdominal",general
+"me duele la rodilla",general
+"tengo dolor muscular",general
+"quiero pedir turno para ginecología",administrativa
+"necesito turno para análisis de sangre",administrativa
+"qué requisitos necesito para estudios",administrativa
+"cómo hago para cancelar un turno",administrativa
+"me duele el pecho y me falta el aire",critica
+"tengo palpitaciones fuertes",critica
+"me siento con presión en el pecho",critica
+"tengo dolor en el brazo izquierdo",critica
+"me duele el cuello",general
+"tengo dolor de oído",general
+"me duele la muela",general
+"tengo dolor de garganta y fiebre",general
+"quiero pedir turno para odontología",administrativa
+"necesito turno para pediatra",administrativa
+"qué horarios tienen para laboratorio",administrativa
+"mi obra social cubre pediatría",administrativa
+"me duele el pecho y quiero turno",critica
+"tengo dificultad para respirar",critica
+"me siento mareado y con dolor de pecho",critica
+"tengo dolor en el pecho y tos",critica
+"me duele la cabeza y quiero turno",general
+"tengo fiebre y dolor muscular",general
+"me duele la garganta y quiero turno",general
+"necesito saber si atienden por mi obra social",administrativa
+"quiero pedir turno para clínica médica",administrativa
+"cómo hago para cambiar mi turno",administrativa
